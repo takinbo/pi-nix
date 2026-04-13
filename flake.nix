@@ -9,7 +9,7 @@
   outputs = { self, nixpkgs, flake-utils }:
     {
       overlays.default = final: prev: {
-        pi = self.packages.${final.system}.pi;
+        pi = self.packages.${final.stdenv.hostPlatform.system}.pi;
       };
     } //
     flake-utils.lib.eachDefaultSystem (system:
