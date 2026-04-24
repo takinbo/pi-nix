@@ -20,16 +20,16 @@
 
         pi = pkgs.buildNpmPackage rec {
           pname = "pi";
-          version = "0.68.1";
+          version = "0.70.0";
 
           src = pkgs.fetchFromGitHub {
             owner = "badlogic";
             repo = "pi-mono";
             rev = "v${version}";
-            hash = "sha256-C7ojKqFxGaWV29lz/DsxM8c2Z436pHoVqqMLcLhXYjE=";
+            hash = "sha256-gB3QUxA4OZ8Zg5YGbAHmknSnAHrhEGxzz/DXRiKiK50=";
           };
 
-          npmDepsHash = "sha256-oYeC11a4Lz2UgEMgCX4s+C5aQ0A1ryMpsD03suedgRc=";
+          npmDepsHash = "sha256-SBm5GPmHNZ24zYBo3rA9n3XTz8Y7oNOaGJ2dY/X2ccw=";
 
           nodejs = pkgs.nodejs_22;
 
