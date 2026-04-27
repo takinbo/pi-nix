@@ -123,7 +123,7 @@ Learn more: [pi-mono on GitHub](https://github.com/badlogic/pi-mono)
 
 ## Versioning
 
-This flake currently packages **pi `v0.70.2`**. The pinned source hash and npm deps hash are both recorded in `flake.nix` and `flake.lock` for fully reproducible builds.
+This flake currently packages **pi `v0.70.5`**. The pinned source hash and npm deps hash are both recorded in `flake.nix` and `flake.lock` for fully reproducible builds.
 
 To update to a newer version of `pi`, bump the `version`, `rev`, `hash`, and `npmDepsHash` fields in `flake.nix` accordingly.
 

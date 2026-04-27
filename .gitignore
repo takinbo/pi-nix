@@ -3,7 +3,7 @@ result
 result-*
 
 # direnv
-.direnv/
+.envrc
 
 # pi project-local extensions/config
 .pi/
