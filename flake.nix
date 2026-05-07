@@ -20,16 +20,16 @@
 
         pi = pkgs.buildNpmPackage rec {
           pname = "pi";
-          version = "0.73.0";
+          version = "0.73.1";
 
           src = pkgs.fetchFromGitHub {
-            owner = "badlogic";
-            repo = "pi-mono";
+            owner = "earendil-works";
+            repo = "pi";
             rev = "v${version}";
-            hash = "sha256-oE4zMH5KEH185Vdp0CE221sa9rJJw35jFLlfhTa3Sg4=";
+            hash = "sha256-ZcqMWghMACzEUswLujwClPF1pbwjTKzTbcYW86ZvjL4=";
           };
 
-          npmDepsHash = "sha256-rBlAzAnP9aif1tZ984AO4HftIJsDgLQ+02J3td4jcRg=";
+          npmDepsHash = "sha256-tneAcwtTIfkcqQ8/Ch1Xa6OiOkTjJNYbH8wfhNneT/g=";
 
           nodejs = pkgs.nodejs_22;
 
@@ -85,7 +85,7 @@
 
           meta = with pkgs.lib; {
             description = "An AI coding agent CLI with read, bash, edit, write tools and session management";
-            homepage = "https://github.com/badlogic/pi-mono";
+            homepage = "https://github.com/earendil-works/pi";
             license = licenses.mit;
             maintainers = [];
             platforms = platforms.unix;

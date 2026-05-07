@@ -2,7 +2,7 @@
 
 > **Bring the AI coding agent `pi` into your Nix world — reproducibly, hermetically, and without fighting npm.**
 
-`pi-nix` is an unofficial [Nix flake](https://nixos.wiki/wiki/Flakes) that packages **[pi](https://github.com/badlogic/pi-mono)** — a powerful AI coding agent CLI — so you can install it declaratively on any Unix system, wire it into your NixOS configuration or Home Manager setup, and never worry about `npm install` breaking your environment again.
+`pi-nix` is an unofficial [Nix flake](https://nixos.wiki/wiki/Flakes) that packages **[pi](https://github.com/earendil-works/pi)** — a powerful AI coding agent CLI — so you can install it declaratively on any Unix system, wire it into your NixOS configuration or Home Manager setup, and never worry about `npm install` breaking your environment again.
 
 ---
 
@@ -22,7 +22,7 @@ So `pi-nix` was born: a flake that takes `pi` from source, threads it through `b
 
 ## Features
 
-- 📦 **Hermetic build** — fetches `pi-mono` from GitHub at a pinned revision with a verified hash
+- 📦 **Hermetic build** — fetches `pi` from GitHub at a pinned revision with a verified hash
 - 🔧 **Native deps handled** — Cairo, Pango, libjpeg, giflib, librsvg, and Pixman are all wired in automatically
 - 🛠️ **Runtime tools bundled** — `ripgrep`, `fd`, and `git` are injected into `pi`'s `PATH` so its built-in tools work out of the box
 - 🧩 **NixOS overlay included** — expose `pi` as `pkgs.pi` across your entire system config with a single line
@@ -117,13 +117,13 @@ environment.systemPackages = [
 
 On top of that, `pi` supports session management, prompt templates, themes, custom extensions, and pluggable AI providers — making it a full-featured agentic development environment inside a single CLI binary.
 
-Learn more: [pi-mono on GitHub](https://github.com/badlogic/pi-mono)
+Learn more: [pi on GitHub](https://github.com/earendil-works/pi)
 
 ---
 
 ## Versioning
 
-This flake currently packages **pi `v0.73.0`**. The pinned source hash and npm deps hash are both recorded in `flake.nix` and `flake.lock` for fully reproducible builds.
+This flake currently packages **pi `v0.73.1`**. The pinned source hash and npm deps hash are both recorded in `flake.nix` and `flake.lock` for fully reproducible builds.
 
 To update to a newer version of `pi`, bump the `version`, `rev`, `hash`, and `npmDepsHash` fields in `flake.nix` accordingly.
 
@@ -151,4 +151,4 @@ Many thanks to [@blmarket](https://github.com/blmarket) for doing the hard yards
 
 ## License
 
-The packaging code in this repository is released into the public domain (or [MIT](https://opensource.org/licenses/MIT), your pick). `pi` itself is licensed under the [MIT License](https://github.com/badlogic/pi-mono/blob/main/LICENSE) by its original authors.
+The packaging code in this repository is released into the public domain (or [MIT](https://opensource.org/licenses/MIT), your pick). `pi` itself is licensed under the [MIT License](https://github.com/earendil-works/pi/blob/main/LICENSE) by its original authors.
