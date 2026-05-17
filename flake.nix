@@ -20,20 +20,16 @@
 
         pi = pkgs.buildNpmPackage rec {
           pname = "pi";
-          version = "0.74.0";
+          version = "0.74.1";
 
           src = pkgs.fetchFromGitHub {
             owner = "earendil-works";
             repo = "pi";
-            rev = "v0.74.0";
-            hash = "sha256-wEiqOezD8w08vyuenh3Kk+YCYBbQoEq67wATDEKy5XM=";
+            rev = "v0.74.1";
+            hash = "sha256-RU6xLz9uF1zTrvWtj7MNNmlavD1t/IVxiWCW90mN8QE=";
           };
 
-          prePatch = ''
-            cp ${./package-lock.json} package-lock.json
-          '';
-
-          npmDepsHash = "sha256-qjju282CPwNCcEKg8M9UW8FCV0VHdLz8ouNcOBbUy5k=";
+          npmDepsHash = "sha256-vQdV59PAzY1DzGoaNYBXS+3fhqM6yCJ6YzTmr7nuQmk=";
           npmDepsFetcherVersion = 2;
 
           nodejs = pkgs.nodejs_22;
@@ -57,10 +53,10 @@
           # Build all packages in the monorepo
           npmBuildScript = "build";
 
-          # Skip generate-models since it requires network access
+          # Skip model generation since it requires network access
           preBuild = ''
             substituteInPlace packages/ai/package.json \
-              --replace-fail '"build": "npm run generate-models && tsgo -p tsconfig.build.json"' \
+              --replace-fail '"build": "npm run generate-models && npm run generate-image-models && tsgo -p tsconfig.build.json"' \
                              '"build": "tsgo -p tsconfig.build.json"'
           '';
 
