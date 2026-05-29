@@ -20,12 +20,12 @@
 
         pi = pkgs.buildNpmPackage rec {
           pname = "pi";
-          version = "0.75.5";
+          version = "0.77.0";
 
           src = pkgs.fetchFromGitHub {
             owner = "earendil-works";
             repo = "pi";
-            rev = "v0.75.5";
+            rev = "v0.77.0";
             hash = "sha256-RNQ4ospdohOA8hyegCMziJHHbmFGdk/QtkjzJmS/PZc=";
           };
 
