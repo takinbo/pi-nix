@@ -20,16 +20,16 @@
 
         pi = pkgs.buildNpmPackage rec {
           pname = "pi";
-          version = "0.79.10";
+          version = "0.80.0";
 
           src = pkgs.fetchFromGitHub {
             owner = "earendil-works";
             repo = "pi";
-            rev = "v0.79.10";
-            hash = "sha256-UMRkOzJpA1XcEHzRwHxgBg6idEmpVJzBKlrXZaVf4MQ=";
+            rev = "v0.80.0";
+            hash = "sha256-vXyDuF/xZwtmNMkbIC3ztpHAMDPMGAz1OGCk9M+MAqE=";
           };
 
-          npmDepsHash = "sha256-r0ykGXYsS84+RyYIkyTrRTxL/hfDijB0F+gMPVKfy0Q=";
+          npmDepsHash = "sha256-L/shmUyRSItG2Cbs8VphR6im1jOtzgTQ9HGrtgkUhEA=";
           npmDepsFetcherVersion = 2;
 
           nodejs = pkgs.nodejs_22;
@@ -68,8 +68,9 @@
             mkdir -p $out/lib/node_modules/pi-monorepo
             cp -r . $out/lib/node_modules/pi-monorepo/
 
-            # Clean up broken workspace symlinks
-            find $out/lib/node_modules/pi-monorepo/node_modules/.bin -xtype l -delete 2>/dev/null || true
+            # Clean up broken workspace symlinks and stale nested workspace package copies
+            find $out/lib/node_modules/pi-monorepo/packages -path '*/node_modules/@earendil-works' -type d -prune -exec rm -rf {} +
+            find $out/lib/node_modules/pi-monorepo -path '*/node_modules/.bin/*' -xtype l -delete 2>/dev/null || true
 
             mkdir -p $out/bin
 

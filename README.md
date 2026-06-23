@@ -123,7 +123,7 @@ Learn more: [pi on GitHub](https://github.com/earendil-works/pi)
 
 ## Versioning
 
-This flake currently packages **pi `v0.79.10`**. The pinned source hash and npm deps hash are recorded in `flake.nix`, and the resolved upstream npm lockfile is used for reproducible builds.
+This flake currently packages **pi `v0.80.0`**. The pinned source hash and npm deps hash are recorded in `flake.nix`, and the resolved upstream npm lockfile is used for reproducible builds.
 
 To update to a newer version of `pi`, bump the versioned source in `flake.nix`, update the source hash, and then update `npmDepsHash` accordingly.
 
