@@ -20,16 +20,16 @@
 
         pi = pkgs.buildNpmPackage rec {
           pname = "pi";
-          version = "0.80.1";
+          version = "0.80.2";
 
           src = pkgs.fetchFromGitHub {
             owner = "earendil-works";
             repo = "pi";
-            rev = "v0.80.1";
-            hash = "sha256-JL35ltBWLv1btQAyqtFUbYH5uG4zabJyEJa4Ccz2nEM=";
+            rev = "v0.80.2";
+            hash = "sha256-aKtgPc3rwHEp856jP3N7nImph0CSG+gsWq9OVci3hmE=";
           };
 
-          npmDepsHash = "sha256-ptDUNkNSZa4f4wlTHbDxQLocbkVhtSKgCAGbx9cs5/o=";
+          npmDepsHash = "sha256-oJB85gvo7ihlAbNPRAAv2EIhH2Wa/1PufDSOqoV+rXQ=";
           npmDepsFetcherVersion = 2;
 
           nodejs = pkgs.nodejs_22;
